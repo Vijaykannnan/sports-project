@@ -5,7 +5,7 @@ const navbarMenus = document.querySelector(".navbar__menus ul");
 
 toggler.onclick = function () {
   if (this.className == "fa fa-bars") {
-    navbarMenus.style = "left:25%";
+    navbarMenus.style = "left:20%";
     this.className = "fa fa-times";
     banner.style = "filter:blur(20px)";
   } else if (this.className == "fa fa-times") {
@@ -60,9 +60,9 @@ let items = [
 ];
 
 let valueItems = items.map(function (val) {
-  let finalVal = `<div class="category-item card">
-          <img src=${val.img} class="img-fluid" alt="sports" />
+  let finalVal = `<div class="col-md-3 card">
           <div class="card-body">
+            <img src=${val.img} class="img-fluid" alt="sports" />
             <p>
             ${val.id} -
             ${val.content}
@@ -73,21 +73,28 @@ let valueItems = items.map(function (val) {
   return finalVal;
 });
 
+let categoryInside = document.querySelector("#category");
 // console.log(valueItems);
-category.innerHTML = valueItems;
+categoryInside.querySelector(".row").innerHTML += valueItems;
+// ;
 
 //--------------------- members counters---------------------------
 
 window.addEventListener("scroll", function (val) {
-  if (window.scrollY >= 1000) {
+  // console.dir(val.target.scrollingElement);
+  // console.log(window.scrollY);
+  // console.log(val.path[1].scrollY);
+  if (val.path[1].scrollY >= 2000) {
     let allCounter = document.querySelectorAll(".counter");
     let speed = 1000;
 
-    // console.log(val);
+
+    console.log("loggeed");
     // if (val === 610) {
-    console.log(window.scrollY);
+    // console.log(window.scrollY);
 
     allCounter.forEach(function (counting) {
+      // console.log(counting);
       let update = () => {
         let target = +counting.getAttribute("data-final");
         let innerData = +counting.innerText;
@@ -95,11 +102,11 @@ window.addEventListener("scroll", function (val) {
         // console.log(inc);
 
         if (innerData < target) {
-          console.log(innerData + inc);
+          // console.log(innerData + inc);
           counting.innerText = innerData + inc;
-          setTimeout(update, 20);
+          setTimeout(update, 60);
         } else {
-          innerData.innerText = target;
+          counting.innerText = target;
         }
       };
 
