@@ -60,7 +60,7 @@ let items = [
 ];
 
 let valueItems = items.map(function (val) {
-  let finalVal = `<div class="col-md-3 card">
+  let finalVal = `<div class="col-md-4 col-lg-3 card">
           <div class="card-body">
             <img src=${val.img} class="img-fluid" alt="sports" />
             <p>
@@ -83,13 +83,14 @@ categoryInside.querySelector(".row").innerHTML += valueItems;
 window.addEventListener("scroll", function (val) {
   // console.dir(val.target.scrollingElement);
   // console.log(window.scrollY);
+  // console.log(val);
   // console.log(val.path[1].scrollY);
   if (val.path[1].scrollY >= 2000) {
     let allCounter = document.querySelectorAll(".counter");
     let speed = 1000;
 
 
-    console.log("loggeed");
+    // console.log("loggeed");
     // if (val === 610) {
     // console.log(window.scrollY);
 

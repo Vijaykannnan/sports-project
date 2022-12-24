@@ -70,6 +70,8 @@ nav {
   font-weight: 600;
 }
 
+
+
 .navbar__menus span {
   font-size: 35px;
   margin-left: 75%;
@@ -98,6 +100,12 @@ nav {
 
   .navbar__menus ul li {
     background: tomato;
+    padding: 5px;
+  }
+
+  .navbar__menus ul a:nth-child(6)>li {
+    background: transparent !important;
+
   }
 
   .navbar__menus ul li:hover {
@@ -291,6 +299,9 @@ section {
   width: 50%;
   height: 80vh;
   padding: 17px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 #about {
@@ -408,6 +419,20 @@ section {
   background-color: tomato;
 }
 
+.category-item .card {
+  margin: 1rem auto;
+}
+
+
+@media all and (max-width:430px) {
+  .category-item .card {
+    width: 19rem;
+    margin: 1rem auto;
+  }
+
+
+}
+
 /*------------------------ members start -------------------*/
 
 .allworkers {
@@ -482,6 +507,10 @@ form button:hover {
 .copyright {
   background-color: rgb(32, 30, 30);
   padding: 2%;
+}
+
+.copyright p {
+  color: rgb(105, 103, 103);
 }
 
 @media (min-width: 800px) and (max-width: 1280px) {
